@@ -2,13 +2,15 @@
   "config": {
     "step": {
       "user": {
+        "title": "Setup Wifi Pool Sensor",
+        "description": "Enter your WiFi Pool API details.",
         "data": {
           "email": "Email Address",
           "password": "Password",
           "domain": "Domain",
-          "io": "IO (Sensor ID for pH)",
-          "io_flow": "IO Flow (Sensor ID for Flow)",
-          "io_redox": "IO Redox (Sensor ID for Redox)"
+          "io": "IO",
+          "io_flow": "IO Flow",
+          "io_redox": "IO Redox"
         }
       }
     }
