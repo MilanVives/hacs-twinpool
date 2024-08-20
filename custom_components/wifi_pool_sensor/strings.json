@@ -1,10 +1,9 @@
 {
-  "title": "Wifi Pool Sensor",
   "config": {
     "step": {
       "user": {
-        "title": "Configure Wifi Pool Sensor",
-        "description": "Enter your Wifi Pool Sensor credentials and settings.",
+        "title": "Configure your WiFi Pool Sensor",
+        "description": "Enter your WiFi Pool API details.",
         "data": {
           "email": "Email Address",
           "password": "Password",
@@ -15,25 +14,5 @@
         }
       }
     }
-  },
-  "options": {
-    "step": {
-      "init": {
-        "title": "Wifi Pool Sensor Options",
-        "description": "Adjust the settings for the Wifi Pool Sensor.",
-        "data": {
-          "io": "IO (Sensor ID for pH)",
-          "io_flow": "IO Flow (Sensor ID for Flow)",
-          "io_redox": "IO Redox (Sensor ID for Redox)"
-        }
-      }
-    }
-  },
-  "abort": {
-    "already_configured": "This Wifi Pool Sensor is already configured."
-  },
-  "error": {
-    "auth_failed": "Authentication failed, please check your credentials.",
-    "unknown": "An unknown error occurred, please try again."
   }
 }
