@@ -1,10 +1,10 @@
 {
   "domain": "wifi_pool_sensor",
-  "name": "Wifi Pool Sensor",
+  "name": "WiFi Pool Sensor",
   "version": "1.0.0",
   "config_flow": true,
-  "documentation": "https://your.documentation.url",
+  "documentation": "https://www.example.com",
   "requirements": [],
   "dependencies": [],
-  "codeowners": ["@fleipkill1985"]
+  "codeowners": ["@your-github-username"]
 }
