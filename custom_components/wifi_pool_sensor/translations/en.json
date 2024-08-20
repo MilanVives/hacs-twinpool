@@ -1,0 +1,16 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "email": "Email Address",
+          "password": "Password",
+          "domain": "Domain",
+          "io": "IO (Sensor ID for pH)",
+          "io_flow": "IO Flow (Sensor ID for Flow)",
+          "io_redox": "IO Redox (Sensor ID for Redox)"
+        }
+      }
+    }
+  }
+}
