@@ -1,0 +1,19 @@
+{
+  "title": "Wifi Pool Sensor",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure Wifi Pool Sensor",
+        "description": "Enter your Wifi Pool Sensor credentials and settings.",
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "domain": "Domain",
+          "io": "IO",
+          "io_flow": "IO Flow",
+          "io_redox": "IO Redox"
+        }
+      }
+    }
+  }
+}
