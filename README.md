@@ -60,8 +60,8 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Contributions are welcome! Feel free to submit issues or pull requests.
 
 🌐 Links
-- Documentation(
-- Home Assistant(https://www.home-assistant.io/)
+- Documentation
+- [Home Assistant](https://www.home-assistant.io/)
 - WiFi Pool App(https://apps.apple.com/de/app/wifipool/id1527010555)
 - POOLSANA WiFiPool Connect Go 2.0(https://www.poolsana.de/automatische-poolsana-ph/chlor-dosieranlage-wifipool-connect-go-2.0)
 - Beniferro WiFi Dosing Systems(https://beniferro.eu/)
