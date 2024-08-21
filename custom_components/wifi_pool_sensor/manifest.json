@@ -8,7 +8,7 @@
   "dependencies": [],
   "codeowners": ["@flipkill1985"],
   "icons": {
-    "icon": "custom_components/wifi_pool_sensor/icon.png",
-    "logo": "custom_components/wifi_pool_sensor/logo.png"
+    "icon": "custom_components/wifi_pool_sensor/icon.svg",
+    "logo": "custom_components/wifi_pool_sensor/logo.svg"
   }
 }
