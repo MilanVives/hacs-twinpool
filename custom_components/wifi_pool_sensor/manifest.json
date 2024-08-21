@@ -1,10 +1,10 @@
 {
   "domain": "wifi_pool_sensor",
   "name": "WiFi Pool Sensor",
-  "version": "1.0.0",
+  "version": "1.0",
   "config_flow": true,
-  "documentation": "https://www.example.com",
+  "documentation": "https://github.com/flipkill1985/hacs-wifipool",
   "requirements": [],
   "dependencies": [],
-  "codeowners": ["@your-github-username"]
+  "codeowners": ["@flipkill1985"]
 }
