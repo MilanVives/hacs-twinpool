@@ -1,7 +1,7 @@
 # 🌊 WiFi Pool Sensor Integration for Home Assistant
 
-![License](https://img.shields.io/github/license/yourusername/wifi_pool_sensor?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/yourusername/wifi_pool_sensor?style=flat-square)
+![License](https://img.shields.io/github/license/MilanVives/hacs-twinpool?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/MilanVives/hacs-twinpool?style=flat-square)
 ![Version](https://img.shields.io/badge/version-1.0-blue?style=flat-square)
 
 This custom Home Assistant integration allows you to monitor your pool's pH levels, flow, and redox values using a WiFi-connected pool sensor.
@@ -31,7 +31,7 @@ Additionally, it supports these dosing systems:
 1. Open HACS in your Home Assistant instance.
 2. Go to **Integrations** and click on the three dots in the top-right corner.
 3. Choose **Custom repositories**.
-4. Add the URL of this repository: `https://github.com/yourusername/wifi_pool_sensor`.
+4. Add the URL of this repository: `https://github.com/MilanVives/hacs-twinpool`.
 5. Select **Integration** as the category.
 6. Once added, search for "WiFi Pool Sensor" in HACS and install it.
 7. Restart Home Assistant.
@@ -41,7 +41,7 @@ Additionally, it supports these dosing systems:
 1. **Download or clone** this repository into your Home Assistant `custom_components` directory:
 
    ```bash
-   git clone https://github.com/yourusername/wifi_pool_sensor.git custom_components/wifi_pool_sensor
+   git clone https://github.com/MilanVives/hacs-twinpool.git custom_components/wifi_pool_sensor
 
    ```
 
