@@ -1,12 +1,12 @@
 {
-  "domain": "wifi_pool_sensor",
+  "domain": "twinpool_sensor",
   "name": "WiFi Pool Sensor",
   "version": "1.0.0",
   "config_flow": true,
   "documentation": "https://github.com/MilanVives/hacs-twinpool.git",
   "requirements": [],
   "dependencies": [],
-  "codeowners": ["@flipkill1985"],
+  "codeowners": ["@MilanVives"],
   "icons": {
     "icon": "custom_components/wifi_pool_sensor/icon.svg",
     "logo": "custom_components/wifi_pool_sensor/logo.svg"
