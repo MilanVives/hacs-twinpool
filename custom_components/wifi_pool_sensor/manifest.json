@@ -1,9 +1,9 @@
 {
   "domain": "wifi_pool_sensor",
   "name": "WiFi Pool Sensor",
-  "version": "1.4.0",
+  "version": "1.0.0",
   "config_flow": true,
-  "documentation": "https://github.com/flipkill1985/hacs-wifipool",
+  "documentation": "https://github.com/MilanVives/hacs-twinpool.git",
   "requirements": [],
   "dependencies": [],
   "codeowners": ["@flipkill1985"],

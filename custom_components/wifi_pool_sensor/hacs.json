@@ -1,0 +1,7 @@
+{
+  "name": "WiFiPool",
+  "content_in_root": false,
+  "domains": ["sensor"],
+  "country": "BE",
+  "iot_class": "cloud_polling"
+}
