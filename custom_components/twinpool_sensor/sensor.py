@@ -9,10 +9,10 @@ _LOGGER = logging.getLogger(__name__)
 
 CONF_DOMAIN = "domain"
 
-# Feste Werte für io_ph, io_flow und io_redox
-FIXED_IO_PH = "e61d476d-bbd0-4527-a9f5-ef0170caa33c.o3"  # ID für den pH-Sensor
-FIXED_IO_FLOW = "e61d476d-bbd0-4527-a9f5-ef0170caa33c.o0"  # ID für den Flow-Sensor
-FIXED_IO_REDOX = "e61d476d-bbd0-4527-a9f5-ef0170caa33c.o4"  # ID für den Redox-Sensor
+# Fixed values for io_ph, io_flow and io_redox
+FIXED_IO_PH = "e61d476d-bbd0-4527-a9f5-ef0170caa33c.o3"  # ID pH-Sensor
+FIXED_IO_FLOW = "e61d476d-bbd0-4527-a9f5-ef0170caa33c.o0"  # ID Flow-Sensor
+FIXED_IO_REDOX = "e61d476d-bbd0-4527-a9f5-ef0170caa33c.o4"  # ID Redox-Sensor
 
 PLATFORM_SCHEMA = vol.Schema({
     vol.Required(CONF_EMAIL): cv.string,
@@ -68,10 +68,10 @@ class WifiPoolSensorPh(SensorEntity):
         async with aiohttp.ClientSession() as session:
             async with session.post(url, json=login_data) as response:
                 if response.status == 200:
-                    _LOGGER.info("Login erfolgreich!")
+                    _LOGGER.info("Login successful!")
                     self._cookies = response.cookies
                 else:
-                    _LOGGER.error("Login fehlgeschlagen: %s", response.status)
+                    _LOGGER.error("Login failed: %s", response.status)
 
     async def get_stats(self):
         """Get statistics for the sensor."""
@@ -99,22 +99,22 @@ class WifiPoolSensorPh(SensorEntity):
                 if latest_value is not None:
                     self._state = latest_value
                 else:
-                    self._state = "Kein gültiger Wert"
+                    self._state = "Invalid value!"
             else:
-                self._state = "Datenabruf fehlgeschlagen"
+                self._state = "Data retrieval failed"
         else:
-            self._state = "Login fehlgeschlagen"
+            self._state = "Login failed"
 
     def extract_latest_value(self, data):
         """Extract the latest value from the data."""
-        _LOGGER.info("Daten zur Extraktion: %s", data)
+        _LOGGER.info("Extracted Data: %s", data)
         if isinstance(data, list) and len(data) > 0:
             latest_entry = data[-1]
             if "device_sensor_data" in latest_entry:
                 sensor_data = latest_entry["device_sensor_data"]
                 if "analog" in sensor_data and "4" in sensor_data["analog"]:
                     return sensor_data["analog"]["4"]
-        _LOGGER.warning("'device_sensor_data' nicht in den Daten vorhanden.")
+        _LOGGER.warning("'device_sensor_data' not available.")
         return None
 
 class WifiPoolSensorFlow(SensorEntity):
@@ -151,10 +151,10 @@ class WifiPoolSensorFlow(SensorEntity):
         async with aiohttp.ClientSession() as session:
             async with session.post(url, json=login_data) as response:
                 if response.status == 200:
-                    _LOGGER.info("Login erfolgreich!")
+                    _LOGGER.info("Login successful!")
                     self._cookies = response.cookies
                 else:
-                    _LOGGER.error("Login fehlgeschlagen: %s", response.status)
+                    _LOGGER.error("Login failed!: %s", response.status)
 
     async def get_stats(self):
         """Get statistics for the sensor."""
@@ -169,7 +169,7 @@ class WifiPoolSensorFlow(SensorEntity):
                 if response.status == 200:
                     return await response.json()
                 else:
-                    _LOGGER.error("Datenabruf fehlgeschlagen: %s", response.status)
+                    _LOGGER.error("Data retrieval failed: %s", response.status)
                     return None
 
     async def async_update(self):
@@ -182,22 +182,22 @@ class WifiPoolSensorFlow(SensorEntity):
                 if latest_value is not None:
                     self._state = latest_value
                 else:
-                    self._state = "Kein gültiger Wert"
+                    self._state = "Invalid vallue!"
             else:
-                self._state = "Datenabruf fehlgeschlagen"
+                self._state = "Data retrieval failed"
         else:
-            self._state = "Login fehlgeschlagen"
+            self._state = "Login failed"
 
     def extract_latest_value(self, data):
         """Extract the latest value from the data."""
-        _LOGGER.info("Daten zur Extraktion: %s", data)
+        _LOGGER.info("Extracted data: %s", data)
         if isinstance(data, list) and len(data) > 0:
             latest_entry = data[-1]
             if "device_sensor_data" in latest_entry:
                 sensor_data = latest_entry["device_sensor_data"]
                 if "switch" in sensor_data and "1" in sensor_data["switch"]:
                     return sensor_data["switch"]["1"]
-        _LOGGER.warning("'device_sensor_data' nicht in den Daten vorhanden.")
+        _LOGGER.warning("'device_sensor_data' not present in the data.")
         return None
 
 class WifiPoolSensorRedox(SensorEntity):
@@ -234,10 +234,10 @@ class WifiPoolSensorRedox(SensorEntity):
         async with aiohttp.ClientSession() as session:
             async with session.post(url, json=login_data) as response:
                 if response.status == 200:
-                    _LOGGER.info("Login erfolgreich!")
+                    _LOGGER.info("Login successful!")
                     self._cookies = response.cookies
                 else:
-                    _LOGGER.error("Login fehlgeschlagen: %s", response.status)
+                    _LOGGER.error("Login failed: %s", response.status)
 
     async def get_stats(self):
         """Get statistics for the sensor."""
@@ -251,10 +251,10 @@ class WifiPoolSensorRedox(SensorEntity):
             async with session.post(url, json=data) as response:
                 if response.status == 200:
                     json_data = await response.json()
-                    _LOGGER.info("API-Antwort für Redox-Sensor: %s", json_data)
+                    _LOGGER.info("API-answer for Redox-Sensor: %s", json_data)
                     return json_data
                 else:
-                    _LOGGER.error("Datenabruf fehlgeschlagen: %s", response.status)
+                    _LOGGER.error("Data retrieval failed: %s", response.status)
                     return None
 
     async def async_update(self):
@@ -267,21 +267,21 @@ class WifiPoolSensorRedox(SensorEntity):
                 if latest_value is not None:
                     self._state = latest_value
                 else:
-                    self._state = "Kein gültiger Wert"
+                    self._state = "Invalid value"
             else:
-                self._state = "Datenabruf fehlgeschlagen"
+                self._state = "Data retrieval failed"
         else:
-            self._state = "Login fehlgeschlagen"
+            self._state = "Login failed"
 
     def extract_latest_value(self, data):
         """Extract the latest value from the data."""
-        _LOGGER.info("Daten zur Extraktion: %s", data)
+        _LOGGER.info("Extracted Data: %s", data)
         if isinstance(data, list) and len(data) > 0:
             latest_entry = data[-1]
             if "device_sensor_data" in latest_entry:
                 sensor_data = latest_entry["device_sensor_data"]
-                _LOGGER.info("Sensordaten für Redox: %s", sensor_data)
+                _LOGGER.info("Sensor data for Redox: %s", sensor_data)
                 if "analog" in sensor_data and "1" in sensor_data["analog"]:
                     return sensor_data["analog"]["1"]
-        _LOGGER.warning("'device_sensor_data' nicht in den Daten vorhanden oder falsch formatiert.")
+        _LOGGER.warning("'device_sensor_data' not present in the data.")
         return None
